@@ -13,14 +13,61 @@
   </head>
   <body>
     <nav>
-      <div style="width: 60px">
-        <i class="fa-solid fa-user"></i>
+      <div
+        id="opcion-usuario"
+        class="btn-usuario active"
+        style="width: 60px"
+        onclick="seleccionarOpcion(1)"
+      >
+        <i class="fa-xl fa-solid fa-user"></i>
       </div>
       <div style="flex: 1" id="botones-nav">
-        <div><i class="fa-solid fa-fire-flame-curved"></i></div>
-        <div><i class="fa-solid fa-star"></i></div>
+        <div class="selector-botones">
+          <div id="opcion-activa"></div>
+          <div
+            id="opcion-perfiles"
+            class="opcion"
+            onclick="seleccionarOpcion(2)"
+          >
+            <i class="fa-xl fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <div
+            id="opcion-matches"
+            class="opcion"
+            onclick="seleccionarOpcion(3)"
+          >
+            <i class="fa-xl fa-solid fa-star"></i>
+          </div>
+        </div>
       </div>
       <div style="width: 60px"></div>
     </nav>
+    <section class="logo-section">
+      <img src="/Imagenes/tinder-logo.png" alt="" />
+    </section>
+    <section class="usuarios-section">
+      <h2 id="test">test</h2>
+      <h3 class="color-primario texto-centrado">Lista de usuarios</h3>
+      <div class="lista-usuarios color-primario">
+        <div class="usuario">
+          <img src="/Imagenes/profile-pics/androide_16.jpg" alt="" />
+          <span class="etiqueta">Androide 16</span>
+        </div>
+        <div class="usuario">
+          <img src="/Imagenes/profile-pics/azula.jpeg" alt="" />
+          <span class="etiqueta">Azula</span>
+        </div>
+        <div class="usuario">
+          <img src="/Imagenes/profile-pics/baby.jpg" alt="" />
+          <span class="etiqueta">Baby</span>
+        </div>
+        <div class="usuario">
+          <img src="/Imagenes/profile-pics/chaozu.jpg" alt="" />
+          <span class="etiqueta">Chaozu</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/controlador.js"></script>
   </body>
 </html>

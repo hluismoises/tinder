@@ -1,8 +1,102 @@
 nav {
   display: flex;
+  margin: 20px 8px;
 }
 
 #botones-nav {
   display: flex;
   justify-content: center;
+}
+
+.selector-botones {
+  display: flex;
+  background-color: #eff1f2;
+  border-radius: 25px;
+  position: relative;
+}
+
+.opcion {
+  padding: 10px 15px;
+  color: #d2d7d8;
+  z-index: 200;
+  cursor: pointer;
+}
+
+/* .opcion.active {
+  background-color: #fff;
+  box-shadow: #c2c2c2 1px 1px 5px;
+  border-radius: 20px;
+} */
+
+#opcion-activa {
+  background-color: #fff;
+  box-shadow: #c2c2c2 1px 1px 5px;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 50px;
+  height: 38px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-usuario {
+  color: #d2d7d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-usuario.active {
+  color: #76cdff;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logo-section img {
+  width: 200px;
+}
+
+.usuarios-section {
+  background-color: #f2f4f5;
+  border-radius: 15px;
+  margin: 8px;
+  padding: 10px;
+}
+
+.lista-usuarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.usuario img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.color-primario {
+  color: #fb5265;
+}
+
+.texto-centrado {
+  text-align: center;
+}
+
+.etiqueta {
+  text-align: center;
+}
+
+.flama-activa {
+  color: #fb5265;
+}
+
+.estrella-activa {
+  color: #ffc400;
 }
