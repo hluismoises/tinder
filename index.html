@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
+
     <script
       src="https://kit.fontawesome.com/808fd0ac4c.js"
       crossorigin="anonymous"
@@ -76,22 +83,64 @@
       <!-- <div style="background-color: blue">Imagen perfil</div> -->
 
       <div id="detalle-perfil">
-        <div
-          style="
-            background-color: rgba(0, 0, 0, 0.2);
-            color: white;
-            border-radius: 20px;
-            margin: 20px;
-          "
-        >
-          Goku
+        <div class="contenedor-detalle-perfil">
+          <div>
+            <span class="nombre">Bulma</span><span class="edad">34</span>
+            <span class="icono-check"
+              ><i class="fa-solid fa-circle-check"></i
+            ></span>
+          </div>
+          <div>
+            <span><i class="fa-solid fa-briefcase"></i>Guerrero Z</span>
+          </div>
+          <div>
+            <span><i class="fa-solid fa-location-dot"></i>Tegucigalpa</span>
+          </div>
+          <div class="contenerdor-gustos">
+            <div class="item-gusto">Pelear</div>
+            <div class="item-gusto">Comer</div>
+            <div class="item-gusto">Genkidamas</div>
+          </div>
         </div>
       </div>
-      <footer style="background-color: yellow">3</footer>
+      <footer>
+        <div><i class="fa-solid fa-angle-left"></i></div>
+        <div class="boton-corazon"><i class="fa-solid fa-heart"></i></div>
+        <div><i class="fa-solid fa-angle-right"></i></div>
+      </footer>
     </section>
 
     <!-- Conenido 3: Matches -->
-    <section id="contenido-3">Matches</section>
+    <section id="contenido-3">
+      <div class="contenedor-matches">
+        <h3>Matches</h3>
+        <div class="lista-matches"></div>
+
+        <div class="tarjeta-usuario">
+          <!-- card -->
+          <div class="imagen">
+            <img src="/Imagenes/profile-pics/dende.jpg" alt="" />
+          </div>
+          <div class="detalles">Toda la otra informacion</div>
+        </div>
+
+        <div class="tarjeta-usuario">
+          <!-- card -->
+          <div class="imagen">
+            <img src="/Imagenes/profile-pics/goten.png" alt="" />
+          </div>
+          <div class="detalles">Toda la otra informacion</div>
+        </div>
+
+        <div class="tarjeta-usuario">
+          <!-- card -->
+          <div class="imagen">
+            <img src="/Imagenes/profile-pics/korra.jpg" alt="" />
+          </div>
+          <div class="detalles">Toda la otra informacion</div>
+        </div>
+      </div>
+    </section>
 
     <script src="js/controlador.js"></script>
   </body>

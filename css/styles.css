@@ -1,3 +1,7 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 nav {
   display: flex;
   margin: 20px 8px;
@@ -22,11 +26,11 @@ nav {
   cursor: pointer;
 }
 
-/* .opcion.active {
+.opcion.active {
   background-color: #fff;
   box-shadow: #c2c2c2 1px 1px 5px;
   border-radius: 20px;
-} */
+}
 
 #opcion-activa {
   background-color: #fff;
@@ -102,15 +106,8 @@ nav {
 }
 
 #contenido-1,
-#contenido-3 {
+#contenido-2 {
   display: none;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 #detalle-perfil {
@@ -121,4 +118,103 @@ footer {
   background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.contenedor-detalle-perfil {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+#detalle-perfil .nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+#detalle-perfil .icono-check {
+  color: #2e8cf7;
+  font-size: 1.4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 33px;
+  width: 30px;
+  padding: 1px 3px;
+  margin-right: 5px;
+}
+
+#detalle-perfil .edad {
+  font-size: 1.2;
+  margin-right: 5px;
+}
+
+.contenerdor-gustos {
+  display: flex;
+}
+
+.item-gusto {
+  border: 2px solid #fff;
+  border-radius: 25px;
+  padding: 4px 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.2rem;
+  color: #dddee2;
+  margin-bottom: 5px;
+}
+
+.boton-corazon {
+  background-color: #fff;
+  box-shadow: #bbbbc9 1px 1px 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3ee9bd;
+}
+
+.contenedor-matches {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tarjeta-usuario {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.tarjeta-usuario .imagen {
+  flex: 1;
+}
+
+.tarjeta-usuario .detalles {
+  flex: 2;
+  padding-left: 15px;
+}
+
+.tarjeta-usuario .imagen img {
+  width: 100%;
+  border-radius: 10px;
 }
