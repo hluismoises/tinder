@@ -100,3 +100,25 @@ nav {
 .estrella-activa {
   color: #ffc400;
 }
+
+#contenido-1,
+#contenido-3 {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#detalle-perfil {
+  height: 80vh;
+  background-image: url("/Imagenes/cover-pics/bulma.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 15px;
+}
