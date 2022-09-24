@@ -2,6 +2,8 @@ const opcionUsuario = 1
 const opcionPerfiles = 2
 const opcionMatches = 3
 
+let usuarioSeleccionado = null
+
 const seleccionarOpcion = (opcion) => {
   switch (opcion) {
     case opcionUsuario:
@@ -48,3 +50,34 @@ const seleccionarOpcion = (opcion) => {
       break
   }
 }
+
+const guardarUsuarios = () => {
+  if (!localStorage.getItem("usuarios")) {
+    localStorage.setItem("usuarios", JSON.stringify(usuariosDataInicial))
+  }
+}
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios"))
+
+const generarListaUsuarios = () => {
+  usuarios.forEach((user) => {
+    document.getElementById("lista-usuarios").innerHTML += `
+  <div class="usuario" onclick="seleccionarUsuario(${user.id}, this)">
+    <img src="/Imagenes/${user.imagenPerfil}" alt="" />
+    <span class="etiqueta">${user.nombre}</span>
+  </div>
+  `
+  })
+}
+
+const seleccionarUsuario = (idUsuario, etiqueta) => {
+  usuarioSeleccionado = idUsuario
+  document.querySelectorAll(".usuario").forEach((e) => {
+    e.classList.remove("seleccionado")
+  })
+  etiqueta.classList.add("seleccionado")
+  console.log(usuarioSeleccionado)
+}
+
+guardarUsuarios()
+generarListaUsuarios()
