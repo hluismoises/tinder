@@ -200,6 +200,10 @@ footer {
   color: #3ee9bd;
 }
 
+.boton-corazon-seleccionado {
+  color: #fb5265 !important;
+}
+
 .contenedor-matches {
   background-color: rgb(240, 240, 240);
   border-radius: 10px;

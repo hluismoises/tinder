@@ -10,8 +10,8 @@ const usuariosDataInicial = [
     ocupacion: "Cientifica",
     ciudad: "Tegucigalpa",
     intereses: ["Series", "Suchi", "Negocios"],
-    matches: [2, 3],
-    likes: [2, 3],
+    matches: [6],
+    likes: [2, 3, 6, 7],
     generoInteres: ["F", "M"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -25,8 +25,8 @@ const usuariosDataInicial = [
     ocupacion: "Guerrero Z",
     ciudad: "Tegucigalpa",
     intereses: ["Pelear", "Comer"],
-    matches: [3, 5],
-    likes: [3, 5],
+    matches: [],
+    likes: [1, 7],
     generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -40,8 +40,8 @@ const usuariosDataInicial = [
     ocupacion: "Guerrero Z",
     ciudad: "Tegucigalpa",
     intereses: ["Pelear", "Comer", "Genkidamas"],
-    matches: [2, 4],
-    likes: [2, 4],
+    matches: [7],
+    likes: [1, 7],
     generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -55,8 +55,8 @@ const usuariosDataInicial = [
     ocupacion: "Gening",
     ciudad: "Tegucigalpa",
     intereses: ["Jutsus", "Comer"],
-    matches: [1, 2],
-    likes: [1, 2],
+    matches: [8],
+    likes: [2, 8],
     generoInteres: ["M"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -70,8 +70,8 @@ const usuariosDataInicial = [
     ocupacion: "Humano",
     ciudad: "Tegucigalpa",
     intereses: ["Revistas", "Comer"],
-    matches: [2, 3],
-    likes: [2, 3],
+    matches: [],
+    likes: [1, 4, 7],
     generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -85,8 +85,8 @@ const usuariosDataInicial = [
     ocupacion: "Humano",
     ciudad: "Tegucigalpa",
     intereses: ["Pelear", "Comer", "Genkidamas"],
-    matches: [2, 3],
-    likes: [2, 3],
+    matches: [1],
+    likes: [1, 4, 7],
     generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
@@ -100,8 +100,8 @@ const usuariosDataInicial = [
     ocupacion: "Guerrero Z",
     ciudad: "Tegucigalpa",
     intereses: ["Comer"],
-    matches: [5],
-    likes: [5],
+    matches: [3],
+    likes: [3],
     generoInteres: ["M"],
   },
   {
@@ -115,8 +115,8 @@ const usuariosDataInicial = [
     ocupacion: "Hokage",
     ciudad: "Tegucigalpa",
     intereses: ["Pelear", "Comer", "Genkidamas"],
-    matches: [7],
-    likes: [7],
+    matches: [4],
+    likes: [4],
     generoInteres: ["F"],
   },
 ]
