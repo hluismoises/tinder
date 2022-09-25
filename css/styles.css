@@ -122,7 +122,6 @@ nav {
 
 #detalle-perfil {
   height: 80vh;
-  background-image: url("/Imagenes/cover-pics/bulma.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

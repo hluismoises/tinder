@@ -65,31 +65,16 @@
     <section id="contenido-2">
       <!-- <div style="background-color: blue">Imagen perfil</div> -->
 
-      <div id="detalle-perfil">
-        <div class="contenedor-detalle-perfil">
-          <div>
-            <span class="nombre">Bulma</span><span class="edad">34</span>
-            <span class="icono-check"
-              ><i class="fa-solid fa-circle-check"></i
-            ></span>
-          </div>
-          <div>
-            <span><i class="fa-solid fa-briefcase"></i>Guerrero Z</span>
-          </div>
-          <div>
-            <span><i class="fa-solid fa-location-dot"></i>Tegucigalpa</span>
-          </div>
-          <div class="contenerdor-gustos">
-            <div class="item-gusto">Pelear</div>
-            <div class="item-gusto">Comer</div>
-            <div class="item-gusto">Genkidamas</div>
-          </div>
-        </div>
-      </div>
+      <div id="perfil-mostrar-detalle"></div>
+
       <footer>
-        <div><i class="fa-solid fa-angle-left"></i></div>
+        <div onclick="perfilAnterior()">
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
         <div class="boton-corazon"><i class="fa-solid fa-heart"></i></div>
-        <div><i class="fa-solid fa-angle-right"></i></div>
+        <div onclick="perfilSiguiente()">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
       </footer>
     </section>
 

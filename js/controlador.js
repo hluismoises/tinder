@@ -3,6 +3,7 @@ const opcionPerfiles = 2
 const opcionMatches = 3
 
 let usuarioSeleccionado = null
+let perfilActual = 0
 
 const seleccionarOpcion = (opcion) => {
   switch (opcion) {
@@ -77,6 +78,62 @@ const seleccionarUsuario = (idUsuario, etiqueta) => {
   })
   etiqueta.classList.add("seleccionado")
   console.log(usuarioSeleccionado)
+}
+
+const perfilAnterior = () => {
+  if (perfilActual === 0) {
+    perfilActual = usuarios.length - 1
+  } else {
+    perfilActual--
+  }
+
+  renderizarPerfil(usuarios[perfilActual])
+}
+
+const perfilSiguiente = () => {
+  if (perfilActual === usuarios.length - 1) {
+    perfilActual = 0
+  } else {
+    perfilActual++
+  }
+
+  renderizarPerfil(usuarios[perfilActual])
+}
+
+const renderizarPerfil = (usuario) => {
+  let gustos = ""
+  for (let i = 0; i < usuario.intereses.length; i++) {
+    gustos += `<div class='item-gusto'>${usuario.intereses[i]}</div>`
+    console.log("gustos", gustos)
+  }
+
+  document.getElementById("perfil-mostrar-detalle").innerHTML = `
+  <div id="detalle-perfil" style="background-image: url('/Imagenes/${
+    usuario.imagenPortada
+  }')">
+    <div class="contenedor-detalle-perfil">
+      <div>
+        <span class="nombre">${usuario.nombre}</span><span class="edad">${
+    usuario.edad
+  }</span>
+        ${
+          usuario.verificado
+            ? '<span class="icono-check"><i class="fa-solid fa-circle-check"></i></span>'
+            : ""
+        }
+      </div>
+      <div>
+        <span><i class="fa-solid fa-briefcase"></i>${usuario.ocupacion}</span>
+      </div>
+      <div>
+        <span><i class="fa-solid fa-location-dot"></i>${usuario.ciudad}</span>
+      </div>
+      <div class="contenerdor-gustos">
+        ${gustos}
+      </div>
+    </div>
+  </div>
+  `
 }
 
 guardarUsuarios()
