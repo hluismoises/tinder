@@ -8,7 +8,6 @@ let perfilActual = 0
 const seleccionarOpcion = (opcion) => {
   switch (opcion) {
     case opcionUsuario:
-      console.log("Visualizar usuarios")
       document.getElementById("opcion-usuario").classList.add("active")
       document
         .getElementById("opcion-perfiles")
@@ -21,7 +20,6 @@ const seleccionarOpcion = (opcion) => {
       document.getElementById("contenido-3").style.display = "none"
       break
     case opcionPerfiles:
-      console.log("Visualizar perfiles")
       document.getElementById("opcion-usuario").classList.remove("active")
       document.getElementById("opcion-perfiles").classList.add("flama-activa")
       document
@@ -35,7 +33,6 @@ const seleccionarOpcion = (opcion) => {
       document.getElementById("contenido-3").style.display = "none"
       break
     case opcionMatches:
-      console.log("Visualizar matches")
       document.getElementById("opcion-usuario").classList.remove("active")
       document
         .getElementById("opcion-perfiles")
@@ -46,6 +43,10 @@ const seleccionarOpcion = (opcion) => {
       document.getElementById("contenido-1").style.display = "none"
       document.getElementById("contenido-2").style.display = "none"
       document.getElementById("contenido-3").style.display = "block"
+      if (usuarioSeleccionado !== null) {
+        generarMatches(usuarios[usuarioSeleccionado - 1])
+        //console.log(usuarios[usuarioSeleccionado - 1])
+      }
       break
     default:
       break
@@ -64,7 +65,7 @@ const generarListaUsuarios = () => {
   usuarios.forEach((user) => {
     document.getElementById("lista-usuarios").innerHTML += `
   <div class="usuario" onclick="seleccionarUsuario(${user.id}, this)">
-    <img src="/Imagenes/${user.imagenPerfil}" alt="" />
+    <img src="/Imagenes/${user.imagenPerfil}" alt="" onclick="seleccionarOpcion(2)" />
     <span class="etiqueta">${user.nombre}</span>
   </div>
   `
@@ -78,6 +79,14 @@ const seleccionarUsuario = (idUsuario, etiqueta) => {
   })
   etiqueta.classList.add("seleccionado")
   console.log(usuarioSeleccionado)
+
+  if (usuarioSeleccionado - 1 != 0) {
+    renderizarPerfil(usuarios[0])
+    perfilActual = 0
+  } else {
+    renderizarPerfil(usuarios[1])
+    perfilActual = 1
+  }
 }
 
 const perfilAnterior = () => {
@@ -85,6 +94,12 @@ const perfilAnterior = () => {
     perfilActual = usuarios.length - 1
   } else {
     perfilActual--
+    if (perfilActual === usuarioSeleccionado - 1 && perfilActual > 0) {
+      perfilActual--
+    }
+    if (perfilActual === 0) {
+      perfilActual = usuarios.length - 1
+    }
   }
 
   renderizarPerfil(usuarios[perfilActual])
@@ -95,6 +110,28 @@ const perfilSiguiente = () => {
     perfilActual = 0
   } else {
     perfilActual++
+    if (
+      perfilActual === usuarioSeleccionado - 1 &&
+      perfilActual < usuarios.length - 1
+    ) {
+      perfilActual++
+    }
+    if (perfilActual === usuarios.length - 1) {
+      perfilActual = 0
+    }
+  }
+
+  for (
+    let i = 0;
+    i < usuarios[usuarioSeleccionado - 1].generoInteres.length;
+    i++
+  ) {
+    if (
+      usuarios[usuarioSeleccionado - 1].generoInteres[i] ==
+      usuarios[perfilActual].genero
+    ) {
+      console.log("Hace match")
+    }
   }
 
   renderizarPerfil(usuarios[perfilActual])
@@ -104,7 +141,6 @@ const renderizarPerfil = (usuario) => {
   let gustos = ""
   for (let i = 0; i < usuario.intereses.length; i++) {
     gustos += `<div class='item-gusto'>${usuario.intereses[i]}</div>`
-    console.log("gustos", gustos)
   }
 
   document.getElementById("perfil-mostrar-detalle").innerHTML = `
@@ -136,5 +172,50 @@ const renderizarPerfil = (usuario) => {
   `
 }
 
+const generarMatches = (usuario) => {
+  document.getElementById("lista-matches").innerHTML = ""
+  for (let i = 0; i < usuario.matches.length; i++) {
+    console.log(usuario.matches[i])
+    idUsuarioDelMatch = usuarios[usuario.matches[i] - 1]
+    console.log(idUsuarioDelMatch)
+    document.getElementById("lista-matches").innerHTML += `
+    <div class="tarjeta-usuario">
+          <!-- card -->
+          <div class="imagen">
+            <img src="/Imagenes/${idUsuarioDelMatch.imagenPerfil}" alt="" />
+          </div>
+          <div class="detalles">
+          <div>
+            <span class="nombre">${
+              idUsuarioDelMatch.nombre
+            }</span><span class="edad">${idUsuarioDelMatch.edad}</span>
+            ${
+              idUsuarioDelMatch.verificado
+                ? '<span class="icono-check"><i class="fa-solid fa-circle-check"></i></span>'
+                : ""
+            }
+          </div>
+          
+          <div>
+            <span><i class="fa-solid fa-briefcase"></i>${
+              idUsuarioDelMatch.ocupacion
+            }</span>
+          </div>
+          <div>
+            <span><i class="fa-solid fa-location-dot"></i>${
+              idUsuarioDelMatch.ciudad
+            }</span>
+          </div>
+
+          </div>
+    </div>
+    `
+  }
+}
+
+const agregarMatch = () => {
+  usuarios[usuarioSeleccionado - 1].matches.push(usuarios[perfilActual].id)
+}
+
 guardarUsuarios()
-generarListaUsuarios()
+generarListaUsuarios(1)

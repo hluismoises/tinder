@@ -2,7 +2,7 @@ const usuariosDataInicial = [
   {
     id: 1,
     nombre: "Bulma",
-    genero: "M",
+    genero: "F",
     edad: 23,
     verificado: true,
     imagenPerfil: "profile-pics/bulma.jpg",
@@ -47,7 +47,7 @@ const usuariosDataInicial = [
   {
     id: 4,
     nombre: "Hinata",
-    genero: "M",
+    genero: "F",
     edad: 23,
     verificado: true,
     imagenPerfil: "profile-pics/hinata.jpg",
@@ -72,7 +72,7 @@ const usuariosDataInicial = [
     intereses: ["Revistas", "Comer"],
     matches: [2, 3],
     likes: [2, 3],
-    generoInteres: ["M"], // pueden estar ambos ['F', 'M']
+    generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
     id: 6,
@@ -87,7 +87,7 @@ const usuariosDataInicial = [
     intereses: ["Pelear", "Comer", "Genkidamas"],
     matches: [2, 3],
     likes: [2, 3],
-    generoInteres: ["M"], // pueden estar ambos ['F', 'M']
+    generoInteres: ["F"], // pueden estar ambos ['F', 'M']
   },
   {
     id: 7,

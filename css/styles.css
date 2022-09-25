@@ -227,3 +227,11 @@ footer {
   width: 100%;
   border-radius: 10px;
 }
+
+.titulo-matches {
+  text-align: center;
+  color: #fb5265;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
